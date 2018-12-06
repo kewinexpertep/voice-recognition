@@ -9,9 +9,9 @@ import os
 from gtts import gTTS
 import playsound
 
-key = 'gvRfDxuVQ2mDWdR'
-secret = 'ZKeoPwljYCIiCpqo98zU3ld9h'
-app = 'SmartOfficeAt418B'
+key = 'key'
+secret = 'secret key'
+app = 'APP_ID'
 microgear.create(key,secret,app,{'debugmode': True})
 connected = False
 
@@ -63,7 +63,7 @@ def recordAudio():
  
     return data
  
-def jarvis(data):
+def reaction(data):
     if data is not '':
         microgear.publish('/speech',"You : " + data)
         if "how are you" in data or data in ("how are you","how do you feel") :
@@ -105,4 +105,4 @@ time.sleep(2)
 speak("Hi everyone, what can I do for you?")
 while 1:
     data = recordAudio()
-    jarvis(data)
+    reaction(data)
